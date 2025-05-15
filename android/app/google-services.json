@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "636382630814",
+    "project_id": "locksystemapp-513d9",
+    "storage_bucket": "locksystemapp-513d9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636382630814:android:48e6d19011c20383b43c8f",
+        "android_client_info": {
+          "package_name": "com.example.lockappsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8s8wWlMdehItr5zKq2e925U8Wa_c_O3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
