@@ -43,6 +43,7 @@ dependencies:
   cloud_firestore: 
   device_info_plus: 
   crypto: 
+  shared_preferences:
   
 dev_dependencies:
   flutter_test:

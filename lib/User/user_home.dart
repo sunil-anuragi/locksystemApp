@@ -13,6 +13,7 @@ class UserHomePage extends StatefulWidget {
 class _UserHomePageState extends State<UserHomePage> {
   static const platform = MethodChannel('device_lock');
   bool isLocked = false;
+
   @override
   void initState() {
     super.initState();
@@ -64,7 +65,7 @@ class _UserHomePageState extends State<UserHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('User Mode')),
+      appBar: AppBar(title: const Text('User Mode')),
       body: Center(
           child: Text(isLocked
               ? "Device is locked by Admin"

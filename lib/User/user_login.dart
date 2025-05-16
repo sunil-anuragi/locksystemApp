@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lockappsystem/User/user_home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -52,6 +53,8 @@ class _LoginScreenState extends State<LoginScreen> {
       final storedHashed = data['password'];
 
       if (hashedInput == storedHashed) {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('userId', userId.toString());
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -71,6 +74,25 @@ class _LoginScreenState extends State<LoginScreen> {
   void showError(String message) {
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  @override
+  void initState() {
+    navigate();
+    super.initState();
+  }
+
+  Future<void> navigate() async {
+    final prefs = await SharedPreferences.getInstance();
+    var result = await prefs.getString('userId');
+    if (result != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => UserHomePage(userId: result),
+        ),
+      );
+    }
   }
 
   @override
